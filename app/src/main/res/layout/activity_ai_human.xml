@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_gray"
+    android:fitsSystemWindows="true"
+    tools:context=".AiHumanActivity">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/iv_bg"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@mipmap/bg1"-->
+<!--        android:scaleType="centerCrop" />-->
+
+    <ai.guiji.duix.sdk.client.render.DUIXTextureView
+        android:id="@+id/glTextureView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btnPlayPCM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="6dp"
+        android:text="播放pcm"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/btnPlayWAV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnPlayPCM"
+        android:layout_margin="6dp"
+        android:text="播放wav"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/btnRandomMotion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnPlayWAV"
+        android:layout_margin="6dp"
+        android:text="播放随机动作"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/btnStopPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnRandomMotion"
+        android:layout_margin="6dp"
+        android:paddingHorizontal="6dp"
+        android:text="停止播放"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+</RelativeLayout>

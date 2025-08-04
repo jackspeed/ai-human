@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="fab_margin">12dp</dimen>
+    <dimen name="keyboard_height">200dp</dimen>
+    <dimen name="key_height">50dp</dimen>   <!--这里是代表一行的高度。-->
+    <dimen name="keyboard_horizontalGap">1px</dimen>
+    <dimen name="keyboard_verticalGap">1px</dimen>
+    <dimen name="key_height_double">100dp</dimen>  <!--大小是key_height的两倍-->
+</resources>

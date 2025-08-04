@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application' //表示这是一个应用程序模块
+
+android {
+    namespace "com.ai.human"
+    compileSdkVersion 34
+
+    defaultConfig {
+        applicationId "com.ai.human"
+        minSdkVersion 24
+        targetSdkVersion 34
+        versionCode 1
+        versionName "V1.0"
+
+        multiDexEnabled true
+        vectorDrawables.generatedDensities = ['xhdpi', 'xxhdpi']
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            testCoverageEnabled false
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility = 11
+        targetCompatibility = 11
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    //公共模块
+    implementation project(':duix-sdk')
+    // 权限请求框架：https://github.com/getActivity/XXPermissions
+    implementation 'com.github.getActivity:XXPermissions:25.0'
+    //常用工具集合
+    implementation 'com.blankj:utilcode:1.30.7'
+}
+

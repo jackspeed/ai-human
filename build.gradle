@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    repositories {
+        google()
+        mavenCentral() // 确保添加了 Maven Central
+        jcenter() // 如果需要，可以添加 JCenter
+        maven { url 'https://jitpack.io' } // 如果库托管在 JitPack
+//        maven { url "https://tencent-tds-maven.pkg.coding.net/repository/shiply/repo" }
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+//        maven { url "https://tencent-tds-maven.pkg.coding.net/repository/shiply/repo" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
